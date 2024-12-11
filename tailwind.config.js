@@ -11,11 +11,7 @@ export default {
       },
     },
   },
-  variant:{
-    extend: {
-
-    },
-  },
+  variant:{},
   plugins: [],
 }
 
