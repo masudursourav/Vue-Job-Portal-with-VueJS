@@ -1,7 +1,11 @@
 <script setup>
 import logo from '@/assets/img/logo.png'
 import { navLinks, navTitle } from '@/constants'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
+const activeRoute = (routePath) => {
+  const route = useRoute()
+  return route.path === routePath
+}
 </script>
 <template>
   <nav class="bg-green-700 border-b border-green-500">
@@ -17,17 +21,41 @@ import { RouterLink } from 'vue-router'
             <div class="flex space-x-2">
               <RouterLink
                 to="/"
-                class="text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                :class="[
+                  'text-white',
+                  'hover:bg-green-900',
+                  'hover:text-white',
+                  'rounded-md',
+                  'px-3',
+                  'py-2',
+                  activeRoute('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white',
+                ]"
                 >{{ navLinks.home.name }}
               </RouterLink>
               <RouterLink
                 to="/jobs"
-                class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
+                :class="[
+                  'text-white',
+                  'hover:bg-green-900',
+                  'hover:text-white',
+                  'rounded-md',
+                  'px-3',
+                  'py-2',
+                  activeRoute('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white',
+                ]"
                 >{{ navLinks.jobs.name }}
               </RouterLink>
               <RouterLink
                 to="/add-job"
-                class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
+                :class="[
+                  'text-white',
+                  'hover:bg-green-900',
+                  'hover:text-white',
+                  'rounded-md',
+                  'px-3',
+                  'py-2',
+                  activeRoute('/add-job') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white',
+                ]"
                 >{{ navLinks.addJobs.name }}
               </RouterLink>
             </div>
