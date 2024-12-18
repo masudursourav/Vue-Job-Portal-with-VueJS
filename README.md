@@ -21,7 +21,7 @@ npm install
 ```sh
 npm run dev
 ```
-### Rund JSON server
+### Run JSON server
 ```sh
 npm run server
 ```
