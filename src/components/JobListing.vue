@@ -1,4 +1,5 @@
 <script setup>
+import { jobListingsTexts } from '@/constants'
 import axios from 'axios'
 import { defineProps, onMounted, reactive } from 'vue'
 import { RouterLink } from 'vue-router'
@@ -29,7 +30,9 @@ defineProps({
 <template>
   <section>
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">Browse Jobs</h2>
+      <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
+        {{ jobListingsTexts.browseJobs }}
+      </h2>
       <div v-if="state.isLoading" class="text-center text-gray-500 py-6">
         <PulseLoader />
       </div>
@@ -46,7 +49,7 @@ defineProps({
     <RouterLink
       to="/jobs"
       class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-      >View All Jobs
+      >{{ jobListingsTexts.viewAll }}
     </RouterLink>
   </section>
 </template>
