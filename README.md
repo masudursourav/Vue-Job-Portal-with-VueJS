@@ -21,7 +21,10 @@ npm install
 ```sh
 npm run dev
 ```
-
+### Rund JSON server
+```sh
+npm run server
+```
 ### Compile and Minify for Production
 
 ```sh
@@ -33,3 +36,5 @@ npm run build
 ```sh
 npm run lint
 ```
+
+
