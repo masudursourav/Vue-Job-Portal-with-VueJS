@@ -1,5 +1,6 @@
 <script setup>
 import SingleCard from '@/components/SingleCard.vue'
+import { homeCardTexts } from '@/constants'
 import { RouterLink } from 'vue-router'
 </script>
 <template>
@@ -7,23 +8,23 @@ import { RouterLink } from 'vue-router'
     <div class="container-xl lg:container m-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
         <SingleCard>
-          <h2 class="text-2xl font-bold">For Developers</h2>
-          <p class="mt-2 mb-4">Browse our Vue jobs and start your career today</p>
+          <h2 class="text-2xl font-bold">{{ homeCardTexts.forDev }}</h2>
+          <p class="mt-2 mb-4">{{ homeCardTexts.devText }}</p>
           <RouterLink
             to="/jobs"
             class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
           >
-            Browse Jobs
+            {{ homeCardTexts.browseJobs }}
           </RouterLink>
         </SingleCard>
         <SingleCard bg="bg-green-100">
-          <h2 class="text-2xl font-bold">For Employers</h2>
-          <p class="mt-2 mb-4">List your job to find the perfect developer for the role</p>
+          <h2 class="text-2xl font-bold">{{ homeCardTexts.forEmployer }}</h2>
+          <p class="mt-2 mb-4">{{ homeCardTexts.employerText }}</p>
           <RouterLink
             to="/add-job"
             class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600"
           >
-            Add Job
+            {{ homeCardTexts.addJob }}
           </RouterLink>
         </SingleCard>
       </div>

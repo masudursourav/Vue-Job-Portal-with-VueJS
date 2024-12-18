@@ -1,4 +1,5 @@
 <script setup>
+import { readMore, showLess, showMore, yearText } from '@/constants'
 import { computed, defineProps, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 const props = defineProps({
@@ -25,11 +26,11 @@ let cropDescription = computed(() => {
       <div class="mb-5">
         <div>{{ cropDescription }}</div>
         <button @click="toggleFullDescription" class="text-green-500 hover:text-green-600 text-sm">
-          {{ showFullDescription ? 'Show Less' : 'Show More' }}
+          {{ showFullDescription ? showLess : showMore }}
         </button>
       </div>
 
-      <h3 class="text-green-500 mb-2">{{ job.salary }} / year</h3>
+      <h3 class="text-green-500 mb-2">{{ job.salary }} {{ yearText }}</h3>
 
       <div class="border border-gray-100 mb-5"></div>
 
@@ -42,7 +43,7 @@ let cropDescription = computed(() => {
           :to="'/jobs/' + job.id"
           class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
-          Read More
+          {{ readMore }}
         </RouterLink>
       </div>
     </div>
